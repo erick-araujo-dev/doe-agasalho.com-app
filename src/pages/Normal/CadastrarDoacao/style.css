@@ -1,0 +1,106 @@
+.cadastrar-doacao {
+    display: flex;
+}
+
+.cadastrar-doacao h2 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    text-align: left;
+    height: 80px;
+    color: #3c3c3c;
+    padding-left: 25px;
+    font-weight: 600;
+}
+
+.cadastrar-doacao .box-busca-cadastro {
+    height: 65vh;
+}
+
+.container-select-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 350px;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.select-cadastro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.select-cadastro select,
+.select-cadastro input {
+    width: 100%;
+    height: 35px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    border: 1px solid var(--golden-rod);
+    margin: 0 5px;
+    font-size: 15px;
+    color: #3c3c3c;
+    padding-left: 10px;
+}
+
+.box-resultado {
+    display: flex;
+}
+
+.cadastrar-doacao .mensagem-doacao-efetuada {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 250px;
+    width: 600px;
+}
+
+.cadastrar-doacao table {
+    border-collapse: collapse;
+    margin: 20px;
+    color: #3c3c3c;
+}
+
+.cadastrar-doacao th{
+    background-color: #3c3c3c3c;
+}
+
+.cadastrar-doacao th,
+.cadastrar-doacao td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(124, 124, 124, 0.434);
+}
+
+/* Barra de scroll do select */
+.select-cadastro select::-webkit-scrollbar {
+    width: 8px;
+    background-color: #c4c4c4;
+}
+
+.select-cadastro select::-webkit-scrollbar-thumb {
+    background-color: var(--golden-rod);
+    border-radius: 10px;
+}
+
+.select-cadastro select::-webkit-scrollbar-thumb:hover {
+    background-color: var(--golden-rod);
+}
+
+/* Botoes de cadastrar e buscar doacao */
+
+
+.cadastrar-doacao .box-btn-cadastrar-listar .link-listar-usuario{
+    margin: 0 15px;
+}
+
+.cadastrar-doacao .box-btn-cadastrar-listar .btn-cadastrar-usuario{
+    margin: 0 5px;
+
+}

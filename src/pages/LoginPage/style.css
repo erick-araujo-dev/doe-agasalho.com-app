@@ -1,0 +1,81 @@
+.banner-login{
+    background-image: linear-gradient(to bottom, var(--steel-blue), #194058);
+    width: 100vw;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    
+}
+
+.login-container {
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    height: 600px;
+    background: rgba(203, 190, 176, 0.5);
+    border: 1px solid var(--dark-brown);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.logo-login {
+    width: 250px;
+    margin-bottom: 50px;
+}
+
+.login-container h2 {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 49px;
+    color: var(--white-smoke);
+    text-shadow: 1px 1px 2px var(--dark-brown), -1px -1px 2px var(--dark-brown);
+}
+
+.mensagem-erro{
+    font-size: 16px;
+    color: rgb(214, 29, 29);
+    margin: 10px 0;
+}
+
+.login-container input {
+    width: 250px;
+    height: 40px;
+    margin: 20px 0;
+    background-color: var(--white-smoke);
+    border-radius: 5px;
+    border: 2px solid var(--dark-brown);
+    color: var(--dark-brown);
+    font-size: 14px;
+    padding: 10px;
+}
+
+.login-container input::placeholder {
+    color: var(--dark-brown);
+    font-size: 14px;
+}
+
+.password-input.error::placeholder {
+    color: rgb(214, 29, 29);
+}
+
+.login-container button{
+    width: 250px;
+    height: 40px;
+    color: var(--white-smoke);
+    background-color: var(--golden-rod);
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container button:hover{
+    border: 2px solid var(--white-smoke);
+}
+
+.login-container button:active{
+    scale: 0.99;
+}

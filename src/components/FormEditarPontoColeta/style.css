@@ -1,0 +1,13 @@
+.btn-editar-voltar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-editar-voltar button:first-of-type{
+    background-color: #A52A2A;
+}
+
+.btn-editar-voltar button{
+    background-color: #228B22;
+}

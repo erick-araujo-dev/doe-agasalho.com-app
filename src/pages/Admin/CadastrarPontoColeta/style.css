@@ -1,0 +1,79 @@
+.cadastrar-usuario, .cadastrar-ponto {
+    display: flex;
+}
+
+.formulario-usuario form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.formulario-usuario input, .formulario-usuario select {
+    width: 100%;
+    height: 35px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    border: 1px solid var(--golden-rod);
+    margin: 0 5px;
+    font-size: 18px;
+    color: #3c3c3c;
+    padding-left: 10px;
+}
+
+.form-row {
+    width: 95%;
+    display: flex;
+}
+
+.form-row div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-btn-cadastrar-listar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-btn-cadastrar-listar .link-listar-usuario{
+    background-color: #A52A2A;
+}
+
+.box-btn-cadastrar-listar button{
+    background-color: #228B22;
+}
+
+.btn-cadastrar-usuario, .link-listar-usuario {
+    align-self: flex-end;
+    margin: 0 40px;
+    padding: 5px 10px;
+    background-color: var(--golden-rod);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--white-smoke);
+    text-decoration: none;
+}
+
+.link-listar-usuario a{
+    text-decoration: none;
+    color: var(--white-smoke);
+    font-weight: 600;
+}
+
+.btn-cadastrar-usuario:hover, .link-listar-usuario:hover {
+    opacity: 50%;
+}
+
+.cadastrar-usuario .mensagem-doacao-efetuada{
+    margin-top: 10px;
+}

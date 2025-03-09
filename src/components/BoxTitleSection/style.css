@@ -1,0 +1,69 @@
+.box-title {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #3c3c3c2f;
+    box-shadow: inset 0 0 2px #3c3c3c2f;
+    width: calc(100vw - 250px);
+}
+
+.box-title h1 {
+    font-size: 35px;
+    text-shadow: 1px 1px 2px #3c3c3c;
+}
+
+.box-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 30px;
+    width: 150px;
+    border: 1px solid var(--golden-rod);
+    box-sizing: content-box;
+    color: #3c3c3c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.logo-nome{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    width: auto;
+}
+
+.logo-nome p{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.box-perfil i{
+    font-size: 30px;
+    display: flex;
+}
+.opcoes-perfil{
+    z-index: 1;
+}
+
+.opcoes-perfil button, .opcoes-perfil a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 30px;
+    width: 150px;
+    border: 1px solid var(--golden-rod);
+    margin-top: 10px;
+    background-color: #d8d8d8;
+    color: #3c3c3c;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+   text-decoration: none;
+}

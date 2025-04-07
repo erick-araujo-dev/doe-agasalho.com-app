@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import SidebarAdmin from "../../../components/SidebarAdmin";
 import { Pencil, Plus, Trash } from "phosphor-react";
 import BoxTitleSection from "../../../components/BoxTitleSection";
-import axiosWithAuth from "../../../utils/axiosWithAuth";
 import FormEditarUsuario from "../../../components/FormEditarUsuario";
 import { verifyAuthenticationAdmin } from "../../../utils/verifyAuthentication";
 import { Link } from "react-router-dom";
+import { getUsers, deactivateUser } from "../../../api/users";
 
 const EditarUsuario = () => {
   const [users, setUsers] = useState([]);
@@ -13,22 +13,20 @@ const EditarUsuario = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  verifyAuthenticationAdmin(); //verifica se o user esta autenticado
+  verifyAuthenticationAdmin();
 
   useEffect(() => {
-    getUsers();
-  }, []);
+    const fetchUsers = async () => {
+      try {
+        const data = await getUsers();
+        setUsers(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
 
-  const getUsers = async () => {
-    try {
-      const response = await axiosWithAuth().get(
-        "http://localhost:5059/api/users/active"
-      );
-      setUsers(response.data.$values);
-    } catch (error) {
-      console.error("Erro ao obter usuários:", error);
-    }
-  };
+    fetchUsers();
+  }, []);
 
   const editUser = (id) => {
     const userFound = users.find((u) => u.id === id);
@@ -44,19 +42,12 @@ const EditarUsuario = () => {
 
   const confirmDeletion = async () => {
     try {
-      await axiosWithAuth().put(
-        `http://localhost:5059/api/users/${selectedUser.id}/deactivate`
-      );
+      await deactivateUser(selectedUser.id); 
       setShowConfirmation(false);
-      await getUsers();
+      window.location.reload()
     } catch (error) {
-      if (error.response) {
-        alert(error.response.data)
-      } else if (error.request) {
-        console.error("Erro ao fazer a solicitação:", error.request);
-      } else {
-        console.error("Erro ao configurar a solicitação:", error.message);
-      }
+      console.error(error.message);
+      alert(error.message); 
     }
   };
 
@@ -112,8 +103,7 @@ const EditarUsuario = () => {
                       </thead>
                       <tbody>
                         {users.map((user) => (
-                          <tr
-                          key={user.id}>
+                          <tr key={user.id}>
                             <td>{user.nome}</td>
                             <td>
                               {user.pontoColeta !== ""
@@ -124,27 +114,24 @@ const EditarUsuario = () => {
                             <td>
                               {user.tipo !== "admin" && (
                                 <Pencil
-                                className="icon-edit-delete"
-                                onClick={() => editUser(user.id)}
-                              />
-                                )}
-                                {user.tipo !== "admin" && (
-                                  <Trash
+                                  className="icon-edit-delete"
+                                  onClick={() => editUser(user.id)}
+                                />
+                              )}
+                              {user.tipo !== "admin" && (
+                                <Trash
                                   className="icon-edit-delete"
                                   onClick={() => deleteUser(user.id)}
-                                  />
-                                )}
-                                {user.tipo === "admin" && (
-                                "-----------"
+                                />
                               )}
+                              {user.tipo === "admin" && "-----------"}
                             </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
-                    <Link to="/usuario/cadastrar"
-                          className="link-cadastrar-usuario" >
-                            <Plus/>
+                    <Link to="/usuario/cadastrar" className="link-cadastrar-usuario">
+                      <Plus />
                     </Link>
                   </div>
                 </>

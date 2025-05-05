@@ -340,7 +340,7 @@ const CadastrarDoacao = () => {
                   <div className="mensagem-doacao-efetuada">
                     <p>ITEM ABAIXO CADASTRADO COM SUCESSO!</p>
                     <div className="lista-resultado-busca">
-                      <table className="table">
+                      <table>
                         <thead>
                           <tr>
                             <th>Tipo</th>

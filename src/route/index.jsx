@@ -31,7 +31,7 @@ export default function AppRoute() {
         <Route exact path="/pontocoleta/cadastrar" element={<CadastrarPontoColeta />} />
         <Route exact path="/usuario" element={<EditarUsuario />} />
         <Route exact path="/usuario/cadastrar" element={<CadastrarUsuario />} />
-        <Route exact path="/doacoes/relatorio" element={<RelatorioDoacoes />} />
+        {/* <Route exact path="/doacoes/relatorio" element={<RelatorioDoacoes />} /> */}
         <Route exact path="/normal/nome/editar" element={<EditarUsernameNormal />} />
         <Route exact path="/admin/nome/editar" element={<EditarUsernameAdmin />} />
         <Route exact path="/normal/senha/alterar" element={<AlterarSenhaNormal />} />

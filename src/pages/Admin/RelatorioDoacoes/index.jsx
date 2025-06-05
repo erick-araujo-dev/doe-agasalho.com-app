@@ -92,25 +92,35 @@ const RelatorioDoacoes = () => {
   };
 
   const generateMonthOptions = () => {
-    const currentMonth = new Date().getMonth() + 1;
-    const currentYear = new Date().getFullYear();
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentYear = currentDate.getFullYear();
     const options = [];
-
-    for (let month = currentMonth; month >= 6; month--) {
-      const year = month === currentMonth ? currentYear : currentYear;
+  
+    let year = 2025;
+    let month = 1;
+  
+    while (year < currentYear || (year === currentYear && month <= currentMonth)) {
       const monthString = month.toString().padStart(2, "0");
       const optionValue = `${monthString}/${year}`;
       const optionLabel = `${monthString}/${year}`;
-
+  
       options.push(
         <option key={optionValue} value={optionValue}>
           {optionLabel}
         </option>
       );
+  
+      month++;
+      if (month > 12) {
+        month = 1;
+        year++;
+      }
     }
-
+  
     return options;
   };
+  
 
   const calculateTotals = () => {
     let totalEntrada = 0;

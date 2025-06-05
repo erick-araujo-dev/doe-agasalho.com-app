@@ -56,7 +56,7 @@ const SidebarAdmin = () => {
                                 Usuários
                             </Link>
                         </li>
-                        {/* <li className={location.pathname === "/doacoes/relatorio" ? "active-route" : ""}>
+                        <li className={location.pathname === "/doacoes/relatorio" ? "active-route" : ""}>
                             <i>
                                 <Scroll />
                             </i>
@@ -66,7 +66,7 @@ const SidebarAdmin = () => {
                             >
                                 Relatório Doações
                             </Link>
-                        </li> */}
+                        </li>
                     </ul>
 
                     <ul>
